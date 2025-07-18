@@ -1,9 +1,6 @@
 import os
 from telethon import TelegramClient, events
 
-# Optional: Load from .env in local testing (Render doesn't need this)
-load_dotenv()
-
 API_ID = int(os.environ.get("API_ID"))
 API_HASH = os.environ.get("API_HASH")
 bot_token = os.environ.get("BOT_TOKEN")
