@@ -1,6 +1,5 @@
 import os
 from telethon import TelegramClient, events
-from dotenv import load_dotenv
 
 # Optional: Load from .env in local testing (Render doesn't need this)
 load_dotenv()
