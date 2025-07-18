@@ -1,1 +1,8 @@
-telethon 
+telethon
+emoji
+requests
+pillow
+moviepy
+ffmpeg-python
+pydub
+yt-dlp
