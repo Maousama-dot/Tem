@@ -1,15 +1,20 @@
-import os
 from telethon import TelegramClient, events
+import asyncio
+import os
 
 API_ID = int(os.environ.get("API_ID"))
 API_HASH = os.environ.get("API_HASH")
-bot_token = os.environ.get("BOT_TOKEN")
+bot_token = os.environ.get("bot_token")
 
-bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=bot_token)
+bot = TelegramClient("bot", API_ID, API_HASH)
 
 @bot.on(events.NewMessage(pattern="/start"))
-async def start(event):
-    await event.reply("Hello! I’m alive and running on Render!")
+async def handler(event):
+    await event.reply("Bot is alive!")
 
-print("Bot is running...")
-bot.run_until_disconnected()
+async def main():
+    await bot.start(bot_token=bot_token)
+    print("✅ Bot is running...")
+    await bot.run_until_disconnected()
+
+asyncio.run(main())
